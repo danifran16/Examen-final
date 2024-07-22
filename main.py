@@ -5,10 +5,6 @@ app = Flask(__name__)
 def index():
     return render_template('inicio.html')
 
-# Calculos
-def promedioNotas(n1,n2,n3):
-    return (n1 + n2 + n3)
-
 @app.route('/ejercicio1',methods=['GET','POST'])
 def formulario1():
     if request.method == 'POST':
@@ -38,7 +34,7 @@ def formulario1():
                                    descuento= 'El descuento es: $' + str(descuento),
                                    totalConDescuento= 'El total a pagar es de: $' +str(totalConDescuento))
         else:
-            descuento =  0
+            descuento = 0
             totalConDescuento = totalSinDescuento - descuento
             return render_template('Ejercicio1.html',
                                    nombre='Nombre del cliente:' + nombre,
@@ -53,8 +49,6 @@ def formulario2():
     if request.method == 'POST':
         nombreSesion = request.form['nombreSesion']
         contraseña = request.form['contraseña']
-
-
 
         if nombreSesion == "juan" and contraseña == "admin":
             return render_template('Ejercicio2.html',
