@@ -51,20 +51,20 @@ def formulario1():
 @app.route('/ejercicio2',methods=['GET','POST'])
 def formulario2():
     if request.method == 'POST':
-        nombre1 = request.form['nombre1']
-        nombre2 = request.form['nombre2']
-        nombre3 = request.form['nombre3']
+        nombreSesion = request.form['nombreSesion']
+        contraseña = request.form['contraseña']
 
-        n1L = len(nombre1)
-        n2L = len(nombre2)
-        n3L = len(nombre3)
 
-        if n1L > n2L and n1L > n3L:
-            return render_template('Ejercicio2.html', nombre='El nombre con mayor cantidad de caracteres es: '+ nombre1, caracteres= 'el nombre tiene: ' + str(n1L) + ' caracteres')
-        if n2L > n1L and n2L > n3L:
-            return render_template('Ejercicio2.html', nombre='El nombre con mayor cantidad de caracteres es: '+ nombre2, caracteres= 'el nombre tiene: ' + str(n2L) + ' caracteres')
+
+        if nombreSesion == "juan" and contraseña == "admin":
+            return render_template('Ejercicio2.html',
+                                   nombre='Bienvenido administrador '+ nombreSesion)
+        elif nombreSesion == "pepe" and contraseña == "user":
+            return render_template('Ejercicio2.html',
+                                   nombre='Bienvenido usuario '+ nombreSesion)
         else:
-            return render_template('Ejercicio2.html', nombre='El nombre con mayor cantidad de caracteres es: '+ nombre3, caracteres= 'el nombre tiene: ' + str(n3L) + ' caracteres')
+            return render_template('Ejercicio2.html',
+                                   nombre='Usuario o contraseña incorrectos')
     return render_template('Ejercicio2.html')
 
 if __name__== '__main__':
