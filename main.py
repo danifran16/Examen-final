@@ -12,24 +12,39 @@ def promedioNotas(n1,n2,n3):
 @app.route('/ejercicio1',methods=['GET','POST'])
 def formulario1():
     if request.method == 'POST':
-        nota1 = request.form['nota1']
-        nota2 = request.form['nota1']
-        nota3 = request.form['nota3']
-        asistencia = request.form['asistencia']
+        nombre = request.form['nombre']
+        edad = request.form['edad']
+        cantTarros = request.form['cantTarros']
 
-        nota1 = int(nota1)
-        nota2 = int(nota2)
-        nota3 = int(nota3)
-        asistencia = int(asistencia)
+        edad = int(edad)
+        cantTarros = int(cantTarros)
+        tarrosPintura = 9000
+        totalSinDescuento = int(cantTarros * tarrosPintura)
 
-        pro = promedioNotas(nota1, nota2, nota3)/3
-
-        if pro >= 40 and asistencia >= 75:
-            asis = "Aprobado"
-            return render_template('Ejercicio1.html', promedio=pro, asistencia=asis)
+        if edad >= 18 and edad <= 30:
+            descuento = totalSinDescuento * 0.15
+            totalConDescuento = totalSinDescuento - descuento
+            return render_template('Ejercicio1.html',
+                                   nombre='Nombre del cliente:' + nombre,
+                                   totalSinDescuento= 'Total sin descuento: $' + str(totalSinDescuento),
+                                   descuento= 'El descuento es: $' + str(descuento),
+                                   totalConDescuento= 'El total a pagar es de: $' +str(totalConDescuento))
+        if edad > 30:
+            descuento = totalSinDescuento * 0.25
+            totalConDescuento = totalSinDescuento - descuento
+            return render_template('Ejercicio1.html',
+                                   nombre='Nombre del cliente:' + nombre,
+                                   totalSinDescuento= 'Total sin descuento: $' + str(totalSinDescuento),
+                                   descuento= 'El descuento es: $' + str(descuento),
+                                   totalConDescuento= 'El total a pagar es de: $' +str(totalConDescuento))
         else:
-            asis = "Reprobado"
-            return render_template('Ejercicio1.html', promedio=pro, asistencia=asis)
+            descuento =  0
+            totalConDescuento = totalSinDescuento - descuento
+            return render_template('Ejercicio1.html',
+                                   nombre='Nombre del cliente:' + nombre,
+                                   totalSinDescuento='Total sin descuento: $' + str(totalSinDescuento),
+                                   descuento='El descuento es: $' + str(descuento),
+                                   totalConDescuento='El total a pagar es de: $' + str(totalConDescuento))
     return render_template('Ejercicio1.html')
 
 
