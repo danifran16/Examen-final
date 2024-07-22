@@ -1,14 +1,14 @@
 # Examen final para el ramo de Programacion WEB
 
 Visualizacion inicio de la aplicacion  
-![Inicio](..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreen%20Shot%202024-07-22%20at%2013.54.23%20p.%C2%A0m..png)
+![Inicio](https://github.com/user-attachments/assets/d5b5dada-5a25-4c94-900c-e310c65d5a8f)  
 
 ---
 
 Visualizacion Ejercicio 1  
-![Ejercicio 1](..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreen%20Shot%202024-07-22%20at%2013.54.41%20p.%C2%A0m..png)
+![Ejercicio 1](https://github.com/user-attachments/assets/94a9adf5-61c9-4b20-9526-04cfc866fc18)
 
 ---
 
 Visualizacion Ejercicio 2  
-![Ejercicio 2](..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreen%20Shot%202024-07-22%20at%2013.54.47%20p.%C2%A0m..png)
+![Ejercicio 2](https://github.com/user-attachments/assets/f3f2a20b-0d1c-451f-8927-d47a1b1fe0f2)
